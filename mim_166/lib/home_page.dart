@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,7 +8,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 89, 152, 189),
+        backgroundColor: const Color.fromARGB(255, 174, 121, 136),
         foregroundColor: const Color.fromARGB(255, 14, 8, 8),
         title: const Text("My Flutter Project"),
         actions: [
@@ -84,10 +85,76 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+      body: SingleChildScrollView(
+        child: Container(
+          height: 500,
+          width: 350,
+          margin: EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.brown, const Color.fromARGB(255, 188, 177, 173)],
+            ),
+            border: Border.all(
+              color: const Color.fromARGB(255, 155, 85, 80),
+              width: 5,
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+          ),
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Welcome to homepage",
+                style: GoogleFonts.lobster(textStyle: TextStyle(fontSize: 30)),
+              ),
+              Image.asset('assets/images/1.jpg', height: 50),
 
-      body: const Text(
-        "Maria Mim",
-        style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        // backgroundColor: Colors.brown,
+                        // foregroundColor: Colors.white,
+                        // fixedSize: Size(200, 20),
+                      ),
+                      child: Text("Elevated"),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        // backgroundColor: Colors.brown,
+                        // foregroundColor: Colors.white,
+                        // fixedSize: Size(200, 20),
+                      ),
+                      child: Text("Texted"),
+                    ),
+                    OutlinedButton(onPressed: () {}, child: Text("Outlined")),
+                  ],
+                ),
+              ),
+              // SizedBox(height: 20),
+              Container(
+                height: 100,
+                width: 100,
+                color: const Color.fromARGB(255, 181, 186, 188),
+              ),
+              // Image.asset(
+              //   'assets/images/images.jpeg',
+              //   height: 400,
+              //   fit: BoxFit.fill,
+              // ),
+              // Image.network(
+              //'https://images.unsplash.com/photo-1762809675965-9c60ecb1d5d6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1fHx8ZW58MHx8fHx8',
+              //
+              // ),
+            ],
+          ),
+        ),
       ),
     );
   }
